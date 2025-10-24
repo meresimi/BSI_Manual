@@ -11,5 +11,11 @@ plugins {
     id "org.jetbrains.kotlin.android" version "1.9.0" apply false
 }
 
-include ":app"
-apply from: "${flutterRoot}/packages/flutter_tools/gradle/app_plugin_loader.gradle"
+include(":app")
+
+// Load the Flutter toolchain from the local SDK
+def flutterSdkPath = System.getenv("FLUTTER_ROOT")
+if (flutterSdkPath == null || flutterSdkPath.isEmpty()) {
+    throw new GradleException("FLUTTER_ROOT environment variable not set. Make sure Flutter is installed.")
+}
+apply from: "$flutterSdkPath/packages/flutter_tools/gradle/app_plugin_loader.gradle"
