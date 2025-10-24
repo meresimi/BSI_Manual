@@ -1,0 +1,30 @@
+workflows:
+  bsi_manual_release:
+    name: BSI Manual Release
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      - name: Bootstrap platforms
+        script: |
+          flutter --version
+          # Create Android/iOS scaffolding if missing; keep your lib/ & pubspec.yaml intact
+          if [ ! -d "android" ] || [ ! -d "ios" ]; then
+            flutter create . --org com.meresimi --project-name bsi_manual
+          fi
+      - name: Install dependencies
+        script: |
+          flutter clean
+          flutter pub get
+      - name: Build release APK
+        script: |
+          flutter build apk --release
+      - name: Print APK path
+        script: |
+          echo "APK: build/app/outputs/flutter-apk/app-release.apk"
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - "sales@meresimi.com.sb"

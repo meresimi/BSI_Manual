@@ -1,0 +1,44 @@
+[
+  {
+    "code": "1.1",
+    "name": "Import Permit (Plants)",
+    "unit": "per permit",
+    "amount": 100.0,
+    "category": "Permits"
+  },
+  {
+    "code": "1.2",
+    "name": "Import Permit (Animals)",
+    "unit": "per permit",
+    "amount": 120.0,
+    "category": "Permits"
+  },
+  {
+    "code": "2.1",
+    "name": "Inspection (Cargo)",
+    "unit": "per hour",
+    "amount": 150.0,
+    "category": "Inspection"
+  },
+  {
+    "code": "2.2",
+    "name": "Inspection (Vessel)",
+    "unit": "per hour",
+    "amount": 180.0,
+    "category": "Inspection"
+  },
+  {
+    "code": "3.1",
+    "name": "Fumigation Supervision",
+    "unit": "per job",
+    "amount": 90.0,
+    "category": "Treatment"
+  },
+  {
+    "code": "4.1",
+    "name": "Certificate Issuance",
+    "unit": "per certificate",
+    "amount": 75.0,
+    "category": "Certification"
+  }
+]
