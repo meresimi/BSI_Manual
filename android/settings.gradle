@@ -15,6 +15,7 @@ include(":app")
 
 def flutterSdkPath = System.getenv("FLUTTER_ROOT")
 if (flutterSdkPath == null || flutterSdkPath.isEmpty()) {
-    throw new GradleException("FLUTTER_ROOT not set. Make sure Flutter SDK is installed.")
+    throw new GradleException("FLUTTER_ROOT environment variable not set. Make sure Flutter is installed.")
 }
+
 apply from: "$flutterSdkPath/packages/flutter_tools/gradle/app_plugin_loader.gradle"
